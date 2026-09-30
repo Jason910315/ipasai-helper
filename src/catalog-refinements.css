@@ -372,7 +372,7 @@ body { font-size: 16px; line-height: 1.65; }
   font-size: 16px;
   line-height: 1.8;
 }
-.option-rationales p { color: #44413c; font-size: 15px; line-height: 1.8; }
+.option-rationales p { color: #44413c; font-size: 14px; line-height: 1.8; }
 .option-rationales b { color: #34322e; }
 .feedback-title strong, .explanation-heading strong { color: #34322e; font-size: 16px; }
 .feedback-source, .explanation-source { color: #55524d; font-size: 14px; line-height: 1.6; }
@@ -430,4 +430,45 @@ body { font-size: 16px; line-height: 1.65; }
   .subject-choice strong, .paper-option strong { font-size: 15px; }
   .paper-option small, .modal-footnote { font-size: 14px; }
   .auth-aside-content > p, .auth-proof-list { font-size: 15px; }
+}
+
+/* Post-exam review and wrong-book controls need the same readable body scale. */
+.result-score > span, .result-status { font-size: 14px; }
+.result-stat-row > div { gap: 7px; padding: 14px 15px; }
+.result-stat-row span { color: #55524d; font-size: 15px; line-height: 1.5; }
+.result-stat-row strong { font-size: 20px; }
+.result-stat-row strong small { color: #55524d; font-size: 14px; }
+.review-heading h2 { font-size: 20px; }
+.review-heading h2 span { color: #55524d; font-size: 13px; }
+.review-heading .button, .review-actions .button { min-height: 40px; padding: 0 12px; font-size: 14px; }
+.review-question-number span { font-size: 13px; }
+.review-question-number b { font-size: 14px; }
+.review-context { color: #44413c; font-size: 15px; line-height: 1.75; }
+.review-card h3 { color: #171513; font-size: 18px; font-weight: 400; line-height: 1.8; }
+.review-choice { color: #44413c; font-size: 17px; line-height: 1.75; }
+.review-choice .option-letter { width: 25px; height: 25px; font-size: 13px; }
+.review-card .explanation-box > p, .review-card .option-rationales p { font-size: 15px; }
+.explanation-heading > span:last-child { color: #55524d; font-size: 12px; }
+.explanation-source { color: #55524d; font-size: 14px; }
+.save-review-button { min-height: 38px; padding: 6px 10px; font-size: 12px; }
+
+.segmented-tabs button { min-height: 38px; padding: 0 12px; color: #44413c; font-size: 14px; }
+.segmented-tabs button span { min-width: 21px; height: 21px; color: #34322e; font-size: 12px; }
+.wrongbook-filters select { min-height: 38px; color: #282623; font-size: 14px; }
+.search-field { min-height: 38px; color: #55524d; }
+.search-field input { color: #171513; font-size: 14px; }
+.search-field input::placeholder { color: #686662; opacity: 1; }
+
+@media (max-width: 600px) {
+  .result-stat-row > div { gap: 5px; padding: 10px 8px; }
+  .result-stat-row span { font-size: 13px; }
+  .result-stat-row strong { font-size: 18px; }
+  .result-stat-row strong small { font-size: 12px; }
+  .result-score > span, .result-status { font-size: 13px; }
+  .review-card h3 { font-size: 17px; }
+  .review-choice { font-size: 16px; }
+  .review-heading .button { min-height: 38px; font-size: 13px; }
+  .wrongbook-toolbar { gap: 12px; }
+  .segmented-tabs button { min-height: 38px; font-size: 13px; }
+  .wrongbook-filters select, .search-field input { font-size: 14px; }
 }
