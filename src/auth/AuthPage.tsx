@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, BookOpenCheck, Check, KeyRound, Mail, ShieldCheck, Sparkles } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { ArrowRight, BookOpenCheck, Check, KeyRound, Mail, ShieldCheck } from 'lucide-react'
 import { supabase } from '../lib/supabase'
 
 type AuthMode = 'sign-in' | 'sign-up' | 'reset'
@@ -50,9 +49,9 @@ export function AuthPage() {
   return (
     <main className="auth-shell">
       <section className="auth-aside">
-        <Link to="/" className="brand brand-light" aria-label="iPAS 備考室首頁">
+        <div className="brand brand-light">
           <span className="brand-mark">ip</span><span>備考室</span>
-        </Link>
+        </div>
         <div className="auth-aside-content">
           <div className="eyebrow eyebrow-light"><span className="live-dot" /> 一起把準備變成實力</div>
           <h1>練習得更<br /><em>有方向。</em></h1>
@@ -63,7 +62,7 @@ export function AuthPage() {
             <div><span><Check size={15} /></span>跨裝置保存練習紀錄</div>
           </div>
         </div>
-        <div className="aside-foot"><span>iPAS AI Planner · Level 2</span><span>01 / 02</span></div>
+        <div className="aside-foot"><span>iPAS AI Planner · Level 2</span></div>
         <div className="aside-orbit orbit-one" /><div className="aside-orbit orbit-two" />
       </section>
 
@@ -96,7 +95,6 @@ export function AuthPage() {
               <button type="button" className="text-button" onClick={() => { setMode('sign-up'); setError(''); setMessage('') }}>首次使用，建立帳號 <ArrowRight size={14} /></button>
             </> : <button type="button" className="text-button" onClick={() => { setMode('sign-in'); setError(''); setMessage('') }}>返回登入</button>}
           </div>
-          <div className="auth-footnote"><Sparkles size={14} /> 初次設定完成後，請到 Supabase 關閉公開註冊。</div>
         </div>
       </section>
     </main>

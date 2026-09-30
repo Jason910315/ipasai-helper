@@ -7,7 +7,7 @@ type PreviewTopic = { id: string; subject: 'L21' | 'L23'; parent_id: string | nu
 const topicList = topics as PreviewTopic[]
 
 export function ReviewPreviewPage() {
-  const [selectedTopic, setSelectedTopic] = useState('L23-3.3')
+  const [selectedTopic, setSelectedTopic] = useState('L23-3')
   const activeTopic = topicList.find((topic) => topic.id === selectedTopic)
   const visibleTopics = useMemo(() => topicList.filter((topic) => topic.subject === 'L21' || topic.subject === 'L23'), [])
   const subjectTitle = activeTopic?.subject === 'L21' ? '人工智慧技術應用規劃' : '機器學習技術與應用'

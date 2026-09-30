@@ -327,3 +327,148 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .study-resume-action { align-self: center; font-size: 0; }
   .study-resume-action svg { width: 18px; height: 18px; }
 }
+
+/* Readability pass: one CJK-first reading face and a consistent text scale. */
+:root {
+  font-family: 'Noto Sans TC', 'DM Sans', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+body, button, input, select, textarea {
+  font-family: inherit;
+}
+
+body { font-size: 16px; line-height: 1.65; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; }
+
+.catalog-nav-link { font-size: 16px; }
+.catalog-index-intro p { color: #55524d; font-size: 16px; }
+.catalog-topic-row { min-height: 42px; }
+.catalog-topic-row strong { color: #514f4b; font-size: 15px; line-height: 1.4; }
+.catalog-topic-row.child strong { font-size: 14px; }
+.catalog-topic-row.selected strong { color: #272625; }
+.catalog-topic-section, .catalog-topic-row small { color: #55524d; font-size: 12px; }
+.catalog-explanation p { color: #44413c; font-size: 16px; letter-spacing: 0; line-height: 1.8; }
+.catalog-related-empty strong { color: #44413c; font-size: 17px; }
+.catalog-related-empty span { color: #55524d; font-size: 15px; }
+.catalog-breadcrumb { color: #55524d; font-size: 15px; }
+.catalog-guide-link { font-size: 16px; }
+
+.question-stem {
+  max-width: 72ch;
+  margin: 22px 0 20px;
+  color: #171513;
+  font-family: inherit;
+  font-size: clamp(17px, 1.25vw, 19px);
+  font-weight: 400;
+  line-height: 1.8;
+}
+.answer-option { color: #282623; font-size: 17px; line-height: 1.75; }
+.option-text { font-size: inherit; line-height: inherit; }
+.question-context p { font-size: 16px; line-height: 1.8; }
+.instant-feedback > p, .explanation-box > p {
+  color: #3f3d38;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.option-rationales p { color: #44413c; font-size: 14px; line-height: 1.8; }
+.option-rationales b { color: #34322e; }
+.feedback-title strong, .explanation-heading strong { color: #34322e; font-size: 16px; }
+.feedback-source, .explanation-source { color: #55524d; font-size: 14px; line-height: 1.6; }
+
+.modal-card h2 { font-size: 24px; letter-spacing: -.02em; }
+.modal-description { color: #4f4c46; font-size: 16px; line-height: 1.7; }
+.form-label, .subject-choice strong, .paper-option strong { color: #34322e; font-size: 16px; }
+.subject-choice { min-height: 86px; }
+.paper-option { min-height: 58px; }
+.paper-option small, .modal-footnote { color: #4f4c46; font-size: 14px; line-height: 1.6; }
+.modal-submit, .submit-exam, .button { font-size: 15px; }
+
+.auth-top-note, .auth-intro, .auth-footnote { color: #4f4c46; font-size: 15px; line-height: 1.75; }
+.auth-form label { color: #34322e; font-size: 15px; }
+.text-button { color: #4c4943; font-size: 15px; }
+.auth-aside-content > p, .auth-proof-list { color: #4f4c46; font-size: 16px; line-height: 1.8; }
+.auth-aside .brand { color: #171513; cursor: default; }
+
+.study-home-heading p, .study-weak-meta, .study-weak-main small,
+.study-subject-row p, .study-subject-meta small, .study-mock-link small,
+.study-recent-title small, .study-recent-result { color: #55524d; }
+.study-weak-meta, .study-weak-main small, .study-subject-meta small,
+.study-mock-link small, .study-recent-title small { font-size: 14px; }
+.study-subject-link { font-size: 15px; }
+
+.page-heading-row p, .history-row, .history-row small, .history-date,
+.history-note, .saved-main p, .saved-source, .account-data-section p,
+.setup-copy, .setup-step p, .setup-security, .setup-help,
+.help-step p, .reset-card p, .empty-row, .empty-state { color: #4f4c46; }
+.history-row, .saved-main p, .account-data-section p,
+.setup-copy, .setup-step p, .setup-security, .setup-help,
+.help-step p, .reset-card p, .empty-row, .empty-state { font-size: 15px; line-height: 1.75; }
+.history-row strong, .saved-main h3, .help-step h2 { font-size: 17px; line-height: 1.6; }
+.history-note, .saved-source { font-size: 14px; }
+.table-state, .question-chip, .subject-badge { font-size: 12px; }
+
+@media (max-width: 950px) {
+  .catalog-topic-row { min-height: 40px; }
+  .catalog-topic-row strong, .catalog-topic-row.child strong { font-size: 14px; }
+  .catalog-topic-section, .catalog-topic-row small { font-size: 11px; }
+}
+
+@media (max-width: 650px) {
+  .catalog-nav-link { font-size: 14px; }
+  .catalog-topic-row { min-height: 38px; }
+  .catalog-topic-row strong, .catalog-topic-row.child strong { font-size: 13px; }
+  .catalog-topic-section { font-size: 11px; }
+  .catalog-index-intro p, .catalog-explanation p { font-size: 15px; }
+  .catalog-breadcrumb, .catalog-guide-link { font-size: 14px; }
+  .catalog-related-empty strong { font-size: 15px; }
+  .catalog-related-empty span { font-size: 14px; }
+  .question-stem { font-size: 17px; }
+  .answer-option { min-height: 58px; font-size: 16px; }
+  .exam-heading p { font-size: 14px; }
+  .subject-choice strong, .paper-option strong { font-size: 15px; }
+  .paper-option small, .modal-footnote { font-size: 14px; }
+  .auth-aside-content > p, .auth-proof-list { font-size: 15px; }
+}
+
+/* Post-exam review and wrong-book controls need the same readable body scale. */
+.result-score > span, .result-status { font-size: 14px; }
+.result-stat-row > div { gap: 7px; padding: 14px 15px; }
+.result-stat-row span { color: #55524d; font-size: 15px; line-height: 1.5; }
+.result-stat-row strong { font-size: 20px; }
+.result-stat-row strong small { color: #55524d; font-size: 14px; }
+.review-heading h2 { font-size: 20px; }
+.review-heading h2 span { color: #55524d; font-size: 13px; }
+.review-heading .button, .review-actions .button { min-height: 40px; padding: 0 12px; font-size: 14px; }
+.review-question-number span { font-size: 13px; }
+.review-question-number b { font-size: 14px; }
+.review-context { color: #44413c; font-size: 15px; line-height: 1.75; }
+.review-card h3 { color: #171513; font-size: 18px; font-weight: 400; line-height: 1.8; }
+.review-choice { color: #44413c; font-size: 17px; line-height: 1.75; }
+.review-choice .option-letter { width: 25px; height: 25px; font-size: 13px; }
+.review-card .explanation-box > p, .review-card .option-rationales p { font-size: 15px; }
+.explanation-heading > span:last-child { color: #55524d; font-size: 12px; }
+.explanation-source { color: #55524d; font-size: 14px; }
+.save-review-button { min-height: 38px; padding: 6px 10px; font-size: 12px; }
+
+.segmented-tabs button { min-height: 38px; padding: 0 12px; color: #44413c; font-size: 14px; }
+.segmented-tabs button span { min-width: 21px; height: 21px; color: #34322e; font-size: 12px; }
+.wrongbook-filters select { min-height: 38px; color: #282623; font-size: 14px; }
+.search-field { min-height: 38px; color: #55524d; }
+.search-field input { color: #171513; font-size: 14px; }
+.search-field input::placeholder { color: #686662; opacity: 1; }
+
+@media (max-width: 600px) {
+  .result-stat-row > div { gap: 5px; padding: 10px 8px; }
+  .result-stat-row span { font-size: 13px; }
+  .result-stat-row strong { font-size: 18px; }
+  .result-stat-row strong small { font-size: 12px; }
+  .result-score > span, .result-status { font-size: 13px; }
+  .review-card h3 { font-size: 17px; }
+  .review-choice { font-size: 16px; }
+  .review-heading .button { min-height: 38px; font-size: 13px; }
+  .wrongbook-toolbar { gap: 12px; }
+  .segmented-tabs button { min-height: 38px; font-size: 13px; }
+  .wrongbook-filters select, .search-field input { font-size: 14px; }
+}

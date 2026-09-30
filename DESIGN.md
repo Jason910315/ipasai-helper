@@ -13,9 +13,9 @@ typography:
     fontWeight: 600
     lineHeight: 1.1
   body:
-    fontFamily: "'DM Sans', 'Noto Sans TC', sans-serif"
+    fontFamily: "'Noto Sans TC', 'DM Sans', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif"
     fontSize: "16px"
-    lineHeight: 1.6
+    lineHeight: 1.65
   label:
     fontFamily: "'DM Mono', monospace"
     fontSize: "12px"
@@ -64,7 +64,7 @@ The palette pairs neutral gray paper and ink with one controlled red accent.
 ## Typography
 
 **Display Font:** Kaisei Decol with Noto Serif TC, serif fallback  
-**Body Font:** DM Sans with Noto Sans TC, sans-serif fallback  
+**Body Font:** Noto Sans TC first, then DM Sans and Traditional Chinese system sans-serif fallbacks
 **Label/Mono Font:** DM Mono, monospace
 
 **Character:** Headings carry a restrained editorial weight, while body text remains plain and readable. Monospaced labels are used for compact subject and section identifiers.
@@ -73,8 +73,9 @@ The palette pairs neutral gray paper and ink with one controlled red accent.
 - **Display** (600, fluid 34–58px on home): Main page heading.
 - **Headline** (600, 28px): Major section heading.
 - **Title** (500, 20–24px): Topic and subject titles.
-- **Body** (400, 13–18px): Explanations and supporting content.
-- **Label** (400–500, 9–14px, tracked where useful): Subject codes, metadata, and section identifiers.
+- **Question prompt** (400, 17–19px): Exam and practice question stems.
+- **Body** (400, 16px or larger): Options, explanations, and supporting content.
+- **Label** (400–500, 12–14px): Subject codes, metadata, and section identifiers.
 
 ## Layout
 
