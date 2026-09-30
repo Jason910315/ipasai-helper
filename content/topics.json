@@ -1,0 +1,254 @@
+[
+  {
+    "id": "L211",
+    "subject": "L21",
+    "parent_id": null,
+    "title": "AI 技術應用",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 1
+  },
+  {
+    "id": "L212",
+    "subject": "L21",
+    "parent_id": null,
+    "title": "AI 導入評估與規劃",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 2
+  },
+  {
+    "id": "L213",
+    "subject": "L21",
+    "parent_id": null,
+    "title": "AI 技術應用與系統部署",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 3
+  },
+  {
+    "id": "L21101",
+    "subject": "L21",
+    "parent_id": "L211",
+    "title": "自然語言處理技術與應用",
+    "guide_section": "3.1",
+    "guide_page": "3-3",
+    "sort_order": 4
+  },
+  {
+    "id": "L21102",
+    "subject": "L21",
+    "parent_id": "L211",
+    "title": "電腦視覺技術與應用",
+    "guide_section": "3.2",
+    "guide_page": "3-40",
+    "sort_order": 5
+  },
+  {
+    "id": "L21103",
+    "subject": "L21",
+    "parent_id": "L211",
+    "title": "生成式 AI 技術與應用",
+    "guide_section": "3.3",
+    "guide_page": "3-59",
+    "sort_order": 6
+  },
+  {
+    "id": "L21104",
+    "subject": "L21",
+    "parent_id": "L211",
+    "title": "多模態人工智慧應用",
+    "guide_section": "3.4",
+    "guide_page": "3-73",
+    "sort_order": 7
+  },
+  {
+    "id": "L21201",
+    "subject": "L21",
+    "parent_id": "L212",
+    "title": "AI 導入評估",
+    "guide_section": "4.1",
+    "guide_page": "4-3",
+    "sort_order": 8
+  },
+  {
+    "id": "L21202",
+    "subject": "L21",
+    "parent_id": "L212",
+    "title": "AI 導入規劃",
+    "guide_section": "4.2",
+    "guide_page": "4-15",
+    "sort_order": 9
+  },
+  {
+    "id": "L21203",
+    "subject": "L21",
+    "parent_id": "L212",
+    "title": "AI 風險管理",
+    "guide_section": "4.3",
+    "guide_page": "4-29",
+    "sort_order": 10
+  },
+  {
+    "id": "L21301",
+    "subject": "L21",
+    "parent_id": "L213",
+    "title": "數據準備與模型選擇",
+    "guide_section": "5.1",
+    "guide_page": "5-2",
+    "sort_order": 11
+  },
+  {
+    "id": "L21302",
+    "subject": "L21",
+    "parent_id": "L213",
+    "title": "AI 技術系統集成與部署",
+    "guide_section": "5.2",
+    "guide_page": "5-14",
+    "sort_order": 12
+  },
+  {
+    "id": "L23-3",
+    "subject": "L23",
+    "parent_id": null,
+    "title": "機器學習基礎數學",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 13
+  },
+  {
+    "id": "L23-4",
+    "subject": "L23",
+    "parent_id": null,
+    "title": "機器學習原理與演算法",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 14
+  },
+  {
+    "id": "L23-5",
+    "subject": "L23",
+    "parent_id": null,
+    "title": "機器學習建模與參數調校",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 15
+  },
+  {
+    "id": "L23-6",
+    "subject": "L23",
+    "parent_id": null,
+    "title": "機器學習治理",
+    "guide_section": null,
+    "guide_page": null,
+    "sort_order": 16
+  },
+  {
+    "id": "L23-3.1",
+    "subject": "L23",
+    "parent_id": "L23-3",
+    "title": "機率／統計之機器學習基礎應用",
+    "guide_section": "3.1",
+    "guide_page": "3-2",
+    "sort_order": 17
+  },
+  {
+    "id": "L23-3.2",
+    "subject": "L23",
+    "parent_id": "L23-3",
+    "title": "線性代數之機器學習基礎應用",
+    "guide_section": "3.2",
+    "guide_page": "3-9",
+    "sort_order": 18
+  },
+  {
+    "id": "L23-3.3",
+    "subject": "L23",
+    "parent_id": "L23-3",
+    "title": "數值優化技術與方法",
+    "guide_section": "3.3",
+    "guide_page": "3-18",
+    "sort_order": 19
+  },
+  {
+    "id": "L23-4.1",
+    "subject": "L23",
+    "parent_id": "L23-4",
+    "title": "機器學習原理與技術",
+    "guide_section": "4.1",
+    "guide_page": "4-2",
+    "sort_order": 20
+  },
+  {
+    "id": "L23-4.2",
+    "subject": "L23",
+    "parent_id": "L23-4",
+    "title": "常見機器學習演算法",
+    "guide_section": "4.2",
+    "guide_page": "4-12",
+    "sort_order": 21
+  },
+  {
+    "id": "L23-4.3",
+    "subject": "L23",
+    "parent_id": "L23-4",
+    "title": "深度學習原理與框架",
+    "guide_section": "4.3",
+    "guide_page": "4-54",
+    "sort_order": 22
+  },
+  {
+    "id": "L23-5.1",
+    "subject": "L23",
+    "parent_id": "L23-5",
+    "title": "數據準備與特徵工程",
+    "guide_section": "5.1",
+    "guide_page": "5-2",
+    "sort_order": 23
+  },
+  {
+    "id": "L23-5.2",
+    "subject": "L23",
+    "parent_id": "L23-5",
+    "title": "模型選擇與架構設計",
+    "guide_section": "5.2",
+    "guide_page": "5-11",
+    "sort_order": 24
+  },
+  {
+    "id": "L23-5.3",
+    "subject": "L23",
+    "parent_id": "L23-5",
+    "title": "模型訓練、評估與驗證",
+    "guide_section": "5.3",
+    "guide_page": "5-17",
+    "sort_order": 25
+  },
+  {
+    "id": "L23-5.4",
+    "subject": "L23",
+    "parent_id": "L23-5",
+    "title": "模型調整與優化",
+    "guide_section": "5.4",
+    "guide_page": "5-30",
+    "sort_order": 26
+  },
+  {
+    "id": "L23-6.1",
+    "subject": "L23",
+    "parent_id": "L23-6",
+    "title": "數據隱私、安全與合規",
+    "guide_section": "6.1",
+    "guide_page": "6-2",
+    "sort_order": 27
+  },
+  {
+    "id": "L23-6.2",
+    "subject": "L23",
+    "parent_id": "L23-6",
+    "title": "演算法偏見與公平性",
+    "guide_section": "6.2",
+    "guide_page": "6-14",
+    "sort_order": 28
+  }
+]

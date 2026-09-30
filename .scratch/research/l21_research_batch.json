@@ -1,0 +1,607 @@
+[
+  {
+    "id": "l21-guide_research-01",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【自然語言處理技術與應用】關於「子詞元切分」，下列哪項敘述正確？",
+    "options": {
+      "A": "情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談",
+      "B": "子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列",
+      "C": "詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形",
+      "D": "命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別"
+    },
+    "correct_option": "B",
+    "explanation": "正解為 B。子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列 本題區分「子詞元切分」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「文件情感標註」：情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談；不能回答本題的「子詞元切分」。",
+      "B": "正確。子詞元切分的判斷重點是：子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列。",
+      "C": "不正確。此敘述描述的是「詞形還原」：詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形；不能回答本題的「子詞元切分」。",
+      "D": "不正確。此敘述描述的是「命名實體跨度」：命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別；不能回答本題的「子詞元切分」。"
+    },
+    "topic_ids": [
+      "L21101"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "子詞元切分"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21101 與第一手技術資料設計（子詞元切分）",
+    "source_url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/masked_language_modeling",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://aclanthology.org/P02-1040/",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 101,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-01",
+    "concept_label": "子詞元切分"
+  },
+  {
+    "id": "l21-guide_research-02",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【自然語言處理技術與應用】關於「詞形還原」，下列哪項敘述正確？",
+    "options": {
+      "A": "情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談",
+      "B": "BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意",
+      "C": "詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形",
+      "D": "命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別"
+    },
+    "correct_option": "C",
+    "explanation": "正解為 C。詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形 本題區分「詞形還原」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「文件情感標註」：情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談；不能回答本題的「詞形還原」。",
+      "B": "不正確。此敘述描述的是「BLEU 限制」：BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意；不能回答本題的「詞形還原」。",
+      "C": "正確。詞形還原的判斷重點是：詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形。",
+      "D": "不正確。此敘述描述的是「命名實體跨度」：命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別；不能回答本題的「詞形還原」。"
+    },
+    "topic_ids": [
+      "L21101"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "詞形還原"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21101 與第一手技術資料設計（詞形還原）",
+    "source_url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/masked_language_modeling",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://aclanthology.org/P02-1040/",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 102,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-02",
+    "concept_label": "詞形還原"
+  },
+  {
+    "id": "l21-guide_research-03",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【自然語言處理技術與應用】關於「命名實體跨度」，下列哪項敘述正確？",
+    "options": {
+      "A": "情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談",
+      "B": "BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意",
+      "C": "子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列",
+      "D": "命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別"
+    },
+    "correct_option": "D",
+    "explanation": "正解為 D。命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別 本題區分「命名實體跨度」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「文件情感標註」：情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談；不能回答本題的「命名實體跨度」。",
+      "B": "不正確。此敘述描述的是「BLEU 限制」：BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意；不能回答本題的「命名實體跨度」。",
+      "C": "不正確。此敘述描述的是「子詞元切分」：子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列；不能回答本題的「命名實體跨度」。",
+      "D": "正確。命名實體跨度的判斷重點是：命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別。"
+    },
+    "topic_ids": [
+      "L21101"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "命名實體跨度"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21101 與第一手技術資料設計（命名實體跨度）",
+    "source_url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/masked_language_modeling",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://aclanthology.org/P02-1040/",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 103,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-03",
+    "concept_label": "命名實體跨度"
+  },
+  {
+    "id": "l21-guide_research-04",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【自然語言處理技術與應用】關於「文件情感標註」，下列哪項敘述正確？",
+    "options": {
+      "A": "情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談",
+      "B": "BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意",
+      "C": "子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列",
+      "D": "詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形"
+    },
+    "correct_option": "A",
+    "explanation": "正解為 A。情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談 本題區分「文件情感標註」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "正確。文件情感標註的判斷重點是：情感分析依預先定義的單位與標籤規範分類情緒或立場，句子級與文件級結果不可混為一談。",
+      "B": "不正確。此敘述描述的是「BLEU 限制」：BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意；不能回答本題的「文件情感標註」。",
+      "C": "不正確。此敘述描述的是「子詞元切分」：子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列；不能回答本題的「文件情感標註」。",
+      "D": "不正確。此敘述描述的是「詞形還原」：詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形；不能回答本題的「文件情感標註」。"
+    },
+    "topic_ids": [
+      "L21101"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "文件情感標註"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21101 與第一手技術資料設計（文件情感標註）",
+    "source_url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/masked_language_modeling",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://aclanthology.org/P02-1040/",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 104,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-04",
+    "concept_label": "文件情感標註"
+  },
+  {
+    "id": "l21-guide_research-05",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【自然語言處理技術與應用】關於「BLEU 限制」，下列哪項敘述正確？",
+    "options": {
+      "A": "命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別",
+      "B": "BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意",
+      "C": "子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列",
+      "D": "詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形"
+    },
+    "correct_option": "B",
+    "explanation": "正解為 B。BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意 本題區分「BLEU 限制」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「命名實體跨度」：命名實體辨識在文字中找出實體跨度並指派人名、組織、地點等類別；不能回答本題的「BLEU 限制」。",
+      "B": "正確。BLEU 限制的判斷重點是：BLEU 衡量候選與參考譯文的 n-gram 重疊等訊號，不能單獨保證語意忠實或使用者滿意。",
+      "C": "不正確。此敘述描述的是「子詞元切分」：子詞元方法可將未見詞拆成已知子單位，降低詞彙表外詞問題，但切分會影響詞元序列；不能回答本題的「BLEU 限制」。",
+      "D": "不正確。此敘述描述的是「詞形還原」：詞形還原利用詞彙或語法知識將屈折形式轉為詞元，通常比單純裁字尾更能保留有效詞形；不能回答本題的「BLEU 限制」。"
+    },
+    "topic_ids": [
+      "L21101"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "BLEU 限制"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21101 與第一手技術資料設計（BLEU 限制）",
+    "source_url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://huggingface.co/docs/transformers/tasks/masked_language_modeling",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://aclanthology.org/P02-1040/",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 105,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-05",
+    "concept_label": "BLEU 限制"
+  },
+  {
+    "id": "l21-guide_research-06",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【電腦視覺技術與應用】關於「實例分割」，下列哪項敘述正確？",
+    "options": {
+      "A": "NMS 按信心分數保留候選框並抑制高度重疊的重複預測",
+      "B": "精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少",
+      "C": "實例分割提供像素遮罩並區分同類別的不同物件個體",
+      "D": "影像分類將整張影像對應到一個或多個類別，不直接提供物件位置"
+    },
+    "correct_option": "C",
+    "explanation": "正解為 C。實例分割提供像素遮罩並區分同類別的不同物件個體 本題區分「實例分割」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「非極大值抑制」：NMS 按信心分數保留候選框並抑制高度重疊的重複預測；不能回答本題的「實例分割」。",
+      "B": "不正確。此敘述描述的是「精確率與召回率」：精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少；不能回答本題的「實例分割」。",
+      "C": "正確。實例分割的判斷重點是：實例分割提供像素遮罩並區分同類別的不同物件個體。",
+      "D": "不正確。此敘述描述的是「影像分類」：影像分類將整張影像對應到一個或多個類別，不直接提供物件位置；不能回答本題的「實例分割」。"
+    },
+    "topic_ids": [
+      "L21102"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "實例分割"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21102 與第一手技術資料設計（實例分割）",
+    "source_url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://arxiv.org/abs/1506.02640",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 106,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-06",
+    "concept_label": "實例分割"
+  },
+  {
+    "id": "l21-guide_research-07",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【電腦視覺技術與應用】關於「影像分類」，下列哪項敘述正確？",
+    "options": {
+      "A": "NMS 按信心分數保留候選框並抑制高度重疊的重複預測",
+      "B": "精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少",
+      "C": "遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數",
+      "D": "影像分類將整張影像對應到一個或多個類別，不直接提供物件位置"
+    },
+    "correct_option": "D",
+    "explanation": "正解為 D。影像分類將整張影像對應到一個或多個類別，不直接提供物件位置 本題區分「影像分類」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「非極大值抑制」：NMS 按信心分數保留候選框並抑制高度重疊的重複預測；不能回答本題的「影像分類」。",
+      "B": "不正確。此敘述描述的是「精確率與召回率」：精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少；不能回答本題的「影像分類」。",
+      "C": "不正確。此敘述描述的是「遷移學習」：遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數；不能回答本題的「影像分類」。",
+      "D": "正確。影像分類的判斷重點是：影像分類將整張影像對應到一個或多個類別，不直接提供物件位置。"
+    },
+    "topic_ids": [
+      "L21102"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "影像分類"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21102 與第一手技術資料設計（影像分類）",
+    "source_url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://arxiv.org/abs/1506.02640",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 107,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-07",
+    "concept_label": "影像分類"
+  },
+  {
+    "id": "l21-guide_research-08",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【電腦視覺技術與應用】訓練影像模型時，團隊要依訓練集各色彩通道的均值與標準差縮放像素值。這項前處理的目的和做法何者正確？",
+    "options": {
+      "A": "以訓練集通道均值與標準差正規化，並將相同參數套用於驗證、測試及推論",
+      "B": "每張測試影像各自用其標籤計算均值與標準差",
+      "C": "把每張影像標籤隨機打亂，以減少通道偏差",
+      "D": "依 NMS 閾值刪除重疊邊界框"
+    },
+    "correct_option": "A",
+    "explanation": "影像標準化常以訓練資料估計的通道統計量轉換輸入，之後固定套用至其他資料。不能讓驗證/測試資料或標籤參與參數估計，以免流程不一致或資訊洩漏。",
+    "option_explanations": {
+      "A": "正確：統計量由訓練資料估計，並一致套用於後續資料。",
+      "B": "不正確：測試標籤不可用於前處理，且每張影像個別估計會改變定義。",
+      "C": "不正確：打亂標籤會破壞監督訊號，與通道縮放無關。",
+      "D": "不正確：NMS 是抑制重疊偵測框的後處理，與像素通道正規化不同。"
+    },
+    "topic_ids": [
+      "L21102"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "影像通道正規化"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21102 與 PyTorch 影像正規化文件設計",
+    "source_url": "https://pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "torchvision.transforms.Normalize 官方文件",
+        "url": "https://pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 108,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-08",
+    "concept_label": "影像通道正規化"
+  },
+  {
+    "id": "l21-guide_research-09",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【電腦視覺技術與應用】關於「精確率與召回率」，下列哪項敘述正確？",
+    "options": {
+      "A": "影像分類將整張影像對應到一個或多個類別，不直接提供物件位置",
+      "B": "精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少",
+      "C": "遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數",
+      "D": "實例分割提供像素遮罩並區分同類別的不同物件個體"
+    },
+    "correct_option": "B",
+    "explanation": "正解為 B。精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少 本題區分「精確率與召回率」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「影像分類」：影像分類將整張影像對應到一個或多個類別，不直接提供物件位置；不能回答本題的「精確率與召回率」。",
+      "B": "正確。精確率與召回率的判斷重點是：精確率關注預測為正的樣本中有多少正確，召回率關注實際正例中找回多少。",
+      "C": "不正確。此敘述描述的是「遷移學習」：遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數；不能回答本題的「精確率與召回率」。",
+      "D": "不正確。此敘述描述的是「實例分割」：實例分割提供像素遮罩並區分同類別的不同物件個體；不能回答本題的「精確率與召回率」。"
+    },
+    "topic_ids": [
+      "L21102"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "精確率與召回率"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21102 與第一手技術資料設計（精確率與召回率）",
+    "source_url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://arxiv.org/abs/1506.02640",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 109,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-09",
+    "concept_label": "精確率與召回率"
+  },
+  {
+    "id": "l21-guide_research-10",
+    "subject": "L21",
+    "origin": "guide_research",
+    "stem": "【電腦視覺技術與應用】關於「遷移學習」，下列哪項敘述正確？",
+    "options": {
+      "A": "影像分類將整張影像對應到一個或多個類別，不直接提供物件位置",
+      "B": "NMS 按信心分數保留候選框並抑制高度重疊的重複預測",
+      "C": "遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數",
+      "D": "實例分割提供像素遮罩並區分同類別的不同物件個體"
+    },
+    "correct_option": "C",
+    "explanation": "正解為 C。遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數 本題區分「遷移學習」與同一細目中的其他概念；其他選項分別描述相鄰概念，不適用於題幹所問。",
+    "option_explanations": {
+      "A": "不正確。此敘述描述的是「影像分類」：影像分類將整張影像對應到一個或多個類別，不直接提供物件位置；不能回答本題的「遷移學習」。",
+      "B": "不正確。此敘述描述的是「非極大值抑制」：NMS 按信心分數保留候選框並抑制高度重疊的重複預測；不能回答本題的「遷移學習」。",
+      "C": "正確。遷移學習的判斷重點是：遷移學習將預訓練模型所學表示用於相關任務，可凍結部分層或微調參數。",
+      "D": "不正確。此敘述描述的是「實例分割」：實例分割提供像素遮罩並區分同類別的不同物件個體；不能回答本題的「遷移學習」。"
+    },
+    "topic_ids": [
+      "L21102"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "自編",
+      "學習指引研究題",
+      "遷移學習"
+    ],
+    "group_id": null,
+    "shared_stem": null,
+    "source_label": "自編研究題：依 L21 學習指引 L21102 與第一手技術資料設計（遷移學習）",
+    "source_url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+    "exam_year": null,
+    "exam_session": null,
+    "source_question_number": null,
+    "style_reference": null,
+    "theory_sources": [
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+        "published": "查證日期 2026-09-29"
+      },
+      {
+        "title": "第一手技術文件或原始資料",
+        "url": "https://arxiv.org/abs/1506.02640",
+        "published": "查證日期 2026-09-29"
+      }
+    ],
+    "verified_at": "2026-09-29",
+    "display_order": 110,
+    "needs_manual_media_review": false,
+    "concept_id": "l21-guide-10",
+    "concept_label": "遷移學習"
+  }
+]
