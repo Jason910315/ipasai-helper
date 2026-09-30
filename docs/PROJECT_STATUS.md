@@ -16,12 +16,12 @@
 
 - 帳戶選單新增個人資料管理頁，可匯出作答紀錄、錯題收藏和觀念筆記為 JSON，也可在二次確認後清除目前登入帳號的三類資料。
 - Auth 帳號刪除仍由使用者在 Supabase Dashboard 操作；外鍵會連帶刪除該帳號的個人資料。
-- 新 migration `202609300004_account_data_management.sql` 及 `manual_setup.sql` 已更新。既有 Supabase 專案尚未套用 migration；清除操作在套用前無法使用。
-- 以唯讀方式查詢 Supabase 確認目前有 28 個考點、400 題及 400 筆答案解析；本次沒有寫入雲端資料庫。
+- 使用者已在 Supabase SQL Editor 執行 migration `202609300004_account_data_management.sql`，回報 `Success. No rows returned`。唯讀 RPC 檢查確認匿名呼叫遭拒（HTTP 401），題庫仍有 28 個考點、400 題及 400 筆答案解析。
+- 尚未用登入帳號實際執行清除操作，以免刪除真實學習紀錄；因此已確認 migration 和匿名權限，尚未完成登入後的端對端清除驗收。
 
 ## 尚未完成：讓不同電腦連線
 
-目前本機預覽網址是 `http://127.0.0.1:5173/`。它只指向執行網站的這台電腦；預覽程序停止或電腦關機後網址就無法使用。此工作區已有 Git repository，但目前沒有任何 commit 或 GitHub／Gitea remote，也沒有設定正式網站主機。
+目前本機預覽網址是 `http://127.0.0.1:5173/`。它只指向執行網站的這台電腦；預覽程序停止或電腦關機後網址就無法使用。此工作區已有 Git repository 和本機 commit，但尚未設定 GitHub／Gitea remote 或正式網站主機。
 
 公開部署前仍需要使用者提供或決定：
 
