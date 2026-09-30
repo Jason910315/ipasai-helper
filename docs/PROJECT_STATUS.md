@@ -10,11 +10,11 @@
 - 驗收結果：`npm run build` 成功；Supabase 流程 19 項 smoke checks 通過；瀏覽器已完成登入、全真模擬考、交卷、檢討、收藏、歷史和主題練習流程。
 - 修正首頁弱點清單只把實際作答且答錯的題目列為弱點，未作答題不會被算錯。
 - `.env.local` 含本機 Supabase 設定，已由 `.gitignore` 排除。驗收建立的臨時帳號與作答資料已清除。
-- 本次建置後檢查確認 `.env.local` 受 Git 忽略；掃描 `dist/assets` 的 2 個檔案，未發現本機 `SUPABASE_SECRET_KEY` 值。註冊驗證與密碼重設回呼使用目前網站 origin；正式網址仍須加入 Supabase Auth redirect allowlist。
+- `.env.local` 受 Git 忽略；先前掃描本機 `dist/assets` 的 2 個檔案，未發現本機 `SUPABASE_SECRET_KEY` 值。註冊驗證與密碼重設回呼使用目前網站 origin。使用者回報已設定正式網站的 Supabase Auth Site URL 與 Redirect URLs。
 - 使用者已親自完成註冊、信箱驗證、登入及網站預覽；目前本機預覽網址回應 HTTP 200。
-- 唯讀查證 GitHub 遠端目前有 `main` 分支，本機 `main` 追蹤 `origin/main`；此次文件與題庫修改仍只在本機，未提交或推送。這不代表網站已部署。
+- GitHub 遠端有 `main` 分支，本機 `main` 追蹤 `origin/main`。此次文件狀態更新會建立本機 commit，但依使用者指示暫不推送。
 
-## 本機新增：個人資料管理
+## 個人資料管理
 
 - 帳戶選單新增個人資料管理頁，可匯出作答紀錄、錯題收藏和觀念筆記為 JSON，也可在二次確認後清除目前登入帳號的三類資料。
 - Auth 帳號刪除仍由使用者在 Supabase Dashboard 操作；外鍵會連帶刪除該帳號的個人資料。
@@ -40,18 +40,19 @@ select subject, origin, count(*) from public.questions group by subject, origin 
 select count(*) from public.question_answers;
 ```
 
-## 尚未完成：讓不同電腦連線
+## 公開部署與線上驗收
 
-目前本機預覽網址是 `http://127.0.0.1:5173/`。它只指向執行網站的這台電腦；預覽程序停止或電腦關機後網址就無法使用。使用者已選擇 Cloudflare Pages 與 `pages.dev` 網址，並要求先將目前修改提交、推送至 GitHub `main`，再進行部署設定討論。本次尚未建立 Pages 專案或部署；Pages 專案名稱與正式網址仍待決定。
+目前公開網站網址為 [`https://ipasai-helper.a0938692163.workers.dev/`](https://ipasai-helper.a0938692163.workers.dev/)，由 Cloudflare Workers 提供；這是已部署網站，不是本機 Vite 預覽。使用者回報已在 Cloudflare 設定 `VITE_SUPABASE_URL` 和 `VITE_SUPABASE_PUBLISHABLE_KEY`，重新建置後網站可載入登入／建立帳號頁；也已完成 Supabase Auth 網址設定。
 
-公開部署前仍需要使用者提供或決定：
+正式環境尚待完成下列驗收：
 
-1. 決定 Cloudflare Pages 專案名稱，以確定 `pages.dev` 網址。
-2. 設定 Supabase Auth 的 Site URL 與允許回呼網址。
-3. 明確授權建立 Pages 專案並部署；本次沒有執行部署。
+1. 使用一次性測試帳號完成註冊與信箱驗證。
+2. 登出後重新登入，並測試密碼重設回呼。
+3. 完成一次主題練習或模擬考，確認記錄可寫入 Supabase。
+4. 從另一個瀏覽器或裝置登入，確認同一帳號的個人紀錄同步。
 
-取得這些資料後，接續設定建置輸出與 SPA fallback、部署環境變數（只用 Supabase URL 和 publishable key）、Supabase Auth 的 Site URL／redirect allowlist，最後從另一台瀏覽器驗證登入與進度同步。`SUPABASE_SECRET_KEY` 僅用於本機匯入，不能設定在前端部署環境。
+Vite 會在建置時將 `VITE_` 環境變數寫入前端 bundle；若修改 Cloudflare 建置變數，必須重新建置部署才會生效。`SUPABASE_SECRET_KEY` 僅用於本機匯入，不能設定為前端變數或放進瀏覽器 bundle。
 
 ## 預覽連線
 
-本次重新啟動 Vite 後，`http://127.0.0.1:5173/` 回應 HTTP 200；程序目前仍在本工作階段執行，供一次性帳號驗收使用。若之後無法連線，先確認本機 port 5173 是否有 Vite 監聽；從專案目錄可用 `npm run dev -- --host 127.0.0.1` 重啟。本機預覽不等於跨網路公開部署。
+本機預覽網址為 `http://127.0.0.1:5173/`，只在本機 Vite 程序執行時可用。若無法連線，從專案目錄執行 `npm run dev -- --host 127.0.0.1`。公開網站則使用上方 Cloudflare Workers 網址，不依賴開發電腦持續開機。

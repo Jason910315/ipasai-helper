@@ -9,7 +9,7 @@
 | 帳號與資料 | Supabase Auth、PostgreSQL、Row Level Security |
 | 題庫 | 400 題；每科 100 題歷屆、50 題仿題、50 題學習指引研究題 |
 | 本機驗收 | 模擬考、交卷檢討、主題練習、歷史、收藏及個人資料隔離已驗收 |
-| 公開部署 | 尚未設定主機或公開網址 |
+| 公開部署 | Cloudflare Workers；`https://ipasai-helper.a0938692163.workers.dev/` |
 
 ## 目錄
 
@@ -78,7 +78,7 @@ sequenceDiagram
 
 ## 安全與信任邊界
 
-題目、選項及來源可由已登入使用者讀取；`question_answers` 不授予瀏覽器角色直接讀取。答案及解析由受控 RPC 在練習作答或模考提交後回傳。`exam_attempts`、`saved_questions` 與 `saved_concepts` 透過 RLS 限制為資料擁有者。Supabase secret key 只在本機題庫匯入指令使用，不供前端使用；`.env.local` 由 `.gitignore` 排除。本次 production build 掃描 2 個資產檔，未發現本機 secret key 值；註冊及重設密碼回呼使用目前網站 origin。
+題目、選項及來源可由已登入使用者讀取；`question_answers` 不授予瀏覽器角色直接讀取。答案及解析由受控 RPC 在練習作答或模考提交後回傳。`exam_attempts`、`saved_questions` 與 `saved_concepts` 透過 RLS 限制為資料擁有者。Supabase secret key 只在本機題庫匯入指令使用，不供前端使用；`.env.local` 由 `.gitignore` 排除。Cloudflare Worker 的 Vite 建置使用 `VITE_SUPABASE_URL` 與 `VITE_SUPABASE_PUBLISHABLE_KEY`；註冊與重設密碼回呼使用目前網站 origin。使用者回報已將正式網址設為 Supabase Auth Site URL，並加入 Redirect URLs。
 
 每位下載者應使用自己的 Supabase 專案與帳號，避免不同安裝者共用個人資料庫。部署前端時只設定 Supabase URL 與 publishable key。
 
@@ -87,7 +87,7 @@ sequenceDiagram
 - 本機桌面網站流程已驗收：帳號登入、50 題模考、90 分鐘計時、保存答案、交卷計分、解析、考點練習、題目與觀念收藏、歷史紀錄、跨帳號資料隔離。
 - 本次查詢確認 Supabase 有 28 個考點、400 題及 400 筆私有答案；題目按科目及來源的數量與本機檔案相符。L21 100 題歷屆題已對照 114、115 年 PDF，答案鍵全數相符，跨頁文字差異已查看原頁。115 年第 46 題的題幹同時要求公有雲 GPU 訓練與原始資料留院，和聯邦學習院內本地訓練流程有歧義；雲端主解析及 C 選項解析已經使用者授權後同步，讀回確認答案鍵及其他選項未變。經使用者授權，第 23 題 D 選項解析也已同步；讀回確認 D 解析相符，答案鍵、主解析及 A／B／C 解析未變。300 條錯誤選項解析已逐條語意檢查，未發現其他明顯題幹矛盾；這不是逐條外部技術來源查證。詳細範圍與限制見[專案狀態與交接](PROJECT_STATUS.md#題庫來源複核與待釐清)。
 - 弱點列表只計入實際作答的題目，不會把未作答視為答錯。
-- 尚無公開網站部署；使用者已選擇 Cloudflare Pages 與 `pages.dev` 網址，並要求先提交、推送目前修改，再進行部署設定。Pages 專案名稱及公開網址尚未決定；部署前仍須設定 Supabase Auth 的 Site URL／redirect allowlist，跨裝置行為尚未驗證。
+- 公開網站目前部署於 Cloudflare Workers，網址為 `https://ipasai-helper.a0938692163.workers.dev/`。使用者回報已設定 Cloudflare 的 `VITE_` 變數並重新建置，也已完成 Supabase Auth 的 Site URL／Redirect URLs 設定；目前已確認網址能載入登入與建立帳號頁。正式註冊、信箱驗證、登入、密碼重設和跨裝置同步尚未完成線上驗收。
 - 個人資料管理頁和清除資料 RPC 已加入程式；使用者已套用 `202609300004_account_data_management.sql`。匿名 RPC 呼叫已驗證會遭拒。一次性測試帳號建立 4 筆測試作答（1 筆已提交模擬考、3 筆進行中的主題練習）及收藏、筆記資料；使用者執行全部清除後，畫面回報 4／0／0 筆。唯讀讀回確認三張個人資料表均為 0 筆，Auth 帳號仍存在，題庫仍有 28 個考點、400 題及 400 筆答案解析。個別移除收藏與筆記的畫面也曾各顯示 0 筆。測試只使用一次性帳號資料。
 - 手機版不在目前需求範圍。
 

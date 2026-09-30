@@ -26,4 +26,6 @@
 
 ## 部署
 
-生產網站需將 Vite 靜態輸出部署到支援單頁應用程式路由的網站主機，並在 Supabase Auth 設定網站網址及重新導向網址。部署平台與公開網址尚未設定；本機啟動不會讓其他電腦透過網際網路連線。
+目前網站已部署至 Cloudflare Workers，可從 [iPAS AI 備考室](https://ipasai-helper.a0938692163.workers.dev/) 開啟。Cloudflare Workers Builds 在執行 Vite 建置時需要 `VITE_SUPABASE_URL` 與 `VITE_SUPABASE_PUBLISHABLE_KEY`；設定變更後須重新建置部署。Supabase Auth 的 Site URL 和 Redirect URLs 也須指向此網站網址。
+
+目前已確認正式網址可載入登入／建立帳號頁；註冊驗證、登入、密碼重設及跨裝置同步仍待正式環境驗收。Cloudflare 部署和本機開發設定詳見 [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) 與 [`docs/SUPABASE_SETUP.md`](docs/SUPABASE_SETUP.md)。
