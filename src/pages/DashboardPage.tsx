@@ -4,6 +4,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { StartExamModal } from '../components/StartExamModal'
 import { getAttemptReview, getInProgressAttempt, getRecentAttempts, getTopics } from '../lib/attempts'
+import { getInitialTopic } from '../lib/topic-routing'
 import { SUBJECTS, type Attempt, type SubjectCode, type Topic } from '../types'
 
 interface TopicAccuracy {
@@ -77,6 +78,7 @@ export function DashboardPage() {
   const subjectTopics = useMemo(() => (['L21', 'L23'] as SubjectCode[]).map((subject) => ({
     subject,
     topics: topics.filter((topic) => topic.subject === subject && topic.parent_id !== null),
+    firstTopic: getInitialTopic(topics, subject),
   })), [topics])
 
   function openExam(subject: SubjectCode) {
@@ -119,11 +121,11 @@ export function DashboardPage() {
 
         <aside className="study-subject-section" aria-labelledby="study-subject-title">
           <div className="study-section-heading"><div><span className="study-section-kicker">兩科皆可練習</span><h2 id="study-subject-title">選擇考科</h2></div></div>
-          {subjectTopics.map(({ subject, topics: rows }) => <article className="study-subject-row" key={subject}>
+          {subjectTopics.map(({ subject, topics: rows, firstTopic }) => <article className="study-subject-row" key={subject}>
             <div className="study-subject-meta"><span>{subject}</span><small>{rows.length} 個考點</small></div>
             <h3>{SUBJECTS[subject].title}</h3>
             <p>{SUBJECTS[subject].subtitle}</p>
-            <Link to={`/practice?subject=${subject}`} className="study-subject-link">查看考點並練習 <ArrowRight size={15} /></Link>
+            <Link to={`/practice?subject=${subject}${firstTopic ? `&topic=${encodeURIComponent(firstTopic.id)}` : ''}`} className="study-subject-link">查看考點並練習 <ArrowRight size={15} /></Link>
           </article>)}
           <button className="study-mock-link" onClick={() => openExam('L21')}><Clock3 size={17} /><span><strong>開始正式模擬考</strong><small>50 題 · 90 分鐘</small></span><ArrowUpRight size={17} /></button>
         </aside>

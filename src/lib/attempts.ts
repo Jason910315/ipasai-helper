@@ -49,6 +49,7 @@ export async function getTopics(subject?: SubjectCode): Promise<Topic[]> {
 export async function getQuestions(filters: {
   subject?: SubjectCode
   topicId?: string
+  topicIds?: string[]
   origin?: Question['origin']
   examYear?: number
   examSession?: string
@@ -61,7 +62,8 @@ export async function getQuestions(filters: {
   if (filters.origin) query = query.eq('origin', filters.origin)
   if (filters.examYear) query = query.eq('exam_year', filters.examYear)
   if (filters.examSession) query = query.eq('exam_session', filters.examSession)
-  if (filters.topicId) query = query.contains('topic_ids', [filters.topicId])
+  if (filters.topicIds?.length) query = query.overlaps('topic_ids', filters.topicIds)
+  else if (filters.topicId) query = query.contains('topic_ids', [filters.topicId])
   query = query.eq('needs_manual_media_review', false)
   const { data, error } = await query.limit(1000)
   if (error) throw error
@@ -116,6 +118,7 @@ export async function createAttempt(input: {
   subject: SubjectCode
   mode: 'mock' | 'practice'
   topicId?: string
+  topicIds?: string[]
   paper?: { year: number; session: string }
 }): Promise<Attempt> {
   const isPaper = Boolean(input.paper)
@@ -124,7 +127,8 @@ export async function createAttempt(input: {
     origin: isPaper ? 'official' : undefined,
     examYear: input.paper?.year,
     examSession: input.paper?.session,
-    topicId: input.topicId,
+    topicId: input.topicIds ? undefined : input.topicId,
+    topicIds: input.topicIds,
   })
   if (pool.length < (input.mode === 'mock' ? 50 : 1)) {
     throw new Error('目前題庫題數不足，請先完成題庫初始化或改選其他考點。')

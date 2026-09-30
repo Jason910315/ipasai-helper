@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuth } from '../auth/AuthProvider'
 import { AppShell } from '../components/AppShell'
 import { createAttempt, getQuestions, getTopics } from '../lib/attempts'
+import { getInitialTopic, getTopicQuestionScope } from '../lib/topic-routing'
 import { SUBJECTS, type SubjectCode, type Topic } from '../types'
 
 export function TopicCatalogPage() {
@@ -27,14 +28,13 @@ export function TopicCatalogPage() {
       const allTopics = [...l21Topics, ...l23Topics]
       const allQuestions = [...l21Questions, ...l23Questions]
       const nextCounts: Record<string, number> = {}
-      for (const topic of allTopics) nextCounts[topic.id] = allQuestions.filter((question) => question.topic_ids.includes(topic.id)).length
+      for (const topic of allTopics) {
+        const scope = getTopicQuestionScope(allTopics, topic.id)
+        nextCounts[topic.id] = allQuestions.filter((question) => scope.some((topicId) => question.topic_ids.includes(topicId))).length
+      }
       const requestedSubject = searchParams.get('subject') === 'L21' ? 'L21' : 'L23'
       const requestedTopic = searchParams.get('topic')
-      const linkedTopic = requestedTopic ? allTopics.find((topic) => topic.id === requestedTopic && topic.subject === requestedSubject) : undefined
-      const firstTopic = linkedTopic
-        ?? allTopics.find((topic) => topic.subject === requestedSubject && topic.id === 'L23-3.3')
-        ?? allTopics.find((topic) => topic.subject === requestedSubject && topic.parent_id !== null)
-        ?? allTopics.find((topic) => topic.subject === requestedSubject)
+      const firstTopic = getInitialTopic(allTopics, requestedSubject, requestedTopic)
       setTopics(allTopics)
       setCounts(nextCounts)
       setSelectedTopic(firstTopic?.id ?? null)
@@ -54,7 +54,13 @@ export function TopicCatalogPage() {
     setBusy(true)
     setError('')
     try {
-      const attempt = await createAttempt({ userId: user.id, subject: activeTopic.subject, mode: 'practice', topicId: activeTopic.id })
+      const attempt = await createAttempt({
+        userId: user.id,
+        subject: activeTopic.subject,
+        mode: 'practice',
+        topicId: activeTopic.id,
+        topicIds: getTopicQuestionScope(topics, activeTopic.id),
+      })
       navigate(`/practice/${attempt.id}`)
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : '無法開始練習，請稍後再試。')
